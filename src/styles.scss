@@ -1,1 +1,124 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../src/sass/variables";
+body {
+  margin: 0;
+}
+// BUTTONS
+
+// primary
+.primary-btn {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: $dark-blue;
+  width: 12.5rem;
+  text-align: center;
+  color: $white;
+  transition: 0.3s ease-in-out;
+  span {
+    display: inline-block;
+    padding: 1rem;
+    background-color: $darker-blue;
+    transition: 0.3s ease-in-out;
+  }
+  .btn-text {
+    width: 100%;
+  }
+  &:hover {
+    background-color: $slightly-desaturated-cyan;
+    span {
+      background-color: $slightly-desaturated-cyan-dark;
+      img {
+        filter: hue-rotate(180deg);
+      }
+    }
+  }
+  &:disabled {
+    pointer-events: none;
+    background-color: $light-grey;
+    span {
+      display: none;
+    }
+  }
+}
+
+// secondary button
+
+.secondary-btn {
+  all: unset;
+  border: 1px solid $grayish-dark-blue;
+  cursor: pointer;
+  text-align: center;
+  padding: 1rem 2rem;
+  color: $grayish-dark-blue;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    background-color: $grayish-dark-blue;
+    color: $white;
+  }
+  &:disabled {
+    border: 1px solid $light-grey;
+    color: $light-grey;
+    &:hover {
+        border: 1px solid $light-grey;
+        background:none;
+    }
+  }
+}
+
+// HEADINGS & PARAGRAPHS
+h1,
+h2,
+h3,
+p {
+  color: $grayish-dark-blue;
+}
+h1,
+h2,
+h3 {
+  font-family: $ibarra;
+}
+h1,
+h2 {
+  font-weight: $bold;
+}
+
+h1 {
+  font-size: $extra-large;
+  line-height: $extra-high-line;
+  letter-spacing: $wide-spacing;
+}
+
+h2 {
+  font-size: $large;
+  font-weight: $bold;
+  line-height: $high-line;
+  letter-spacing: $medium-spacing;
+}
+
+h3 {
+  font-size: $medium;
+  line-height: $medium-line;
+  letter-spacing: $narrow-spacing;
+}
+
+p {
+  font-family: $public-sans;
+  font-weight: $regular;
+  line-height: $low-line;
+}
+p.main {
+  font-size: $paragraph1;
+}
+
+p.secondary {
+  font-size: $paragraph2;
+}
+
+// TEXTAREA
+
+textarea, input {
+    all: unset;
+    background-color: $light-grey;
+    padding: 0.563rem 1rem;
+}
