@@ -1,8 +1,15 @@
 @import "../src/sass/variables";
 body {
   margin: 0;
+  // padding: 2rem;
+  overflow-x: hidden;
+}
+nav {
   padding: 2rem;
-  overflow: hidden;
+}
+
+footer {
+  padding: 1.5rem 2.438rem;
 }
 // BUTTONS
 
@@ -62,8 +69,8 @@ body {
     border: 1px solid $light-grey;
     color: $light-grey;
     &:hover {
-        border: 1px solid $light-grey;
-        background:none;
+      border: 1px solid $light-grey;
+      background: none;
     }
   }
 }
@@ -119,8 +126,9 @@ p.secondary {
 
 // TEXTAREA
 
-textarea, input[type=text] {
-    all: unset;
-    background-color: $light-grey;
-    padding: 0.563rem 1rem;
+textarea,
+input[type="text"] {
+  all: unset;
+  background-color: $light-grey;
+  padding: 0.563rem 1rem;
 }
