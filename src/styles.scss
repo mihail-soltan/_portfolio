@@ -1,6 +1,7 @@
 @import "../src/sass/variables";
 body {
   margin: 0;
+  padding: 2rem;
 }
 // BUTTONS
 
@@ -117,7 +118,7 @@ p.secondary {
 
 // TEXTAREA
 
-textarea, input {
+textarea, input[type=text] {
     all: unset;
     background-color: $light-grey;
     padding: 0.563rem 1rem;
