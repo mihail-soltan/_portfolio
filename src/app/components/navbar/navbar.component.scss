@@ -5,6 +5,10 @@ nav {
     justify-content: space-between;
 }
 
+.desktop-navlinks {
+    display: none;
+}
+
 #menuToggle {
     display: block;
 
@@ -23,11 +27,14 @@ nav {
     color: $white;
     font-family: $public-sans;
     transition: color 0.3s ease;
+    font-size: $paragraph1;
+    font-weight: $regular;
   }
 
-  #menuToggle a:hover {
-    color: $bright-red;
-  }
+//   #menuToggle a:hover {
+//     color: $bright-red;
+  
+// }
 
   #menuToggle input {
     display: block;
@@ -106,30 +113,57 @@ nav {
   #menu {
     // display: none;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     width: 300px;
     margin: 0;
-    padding: 50px;
-    top: -2rem;
+    padding: 3.125rem;
+    padding: 0;
+    top: 2.188rem;
     height: 20vh;
     background: $grayish-dark-blue;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     /* to stop flickering of text in safari */
-
+    text-align: center;
     transform-origin: 100% 0%;
-    transform: translate(20%, 0);
+    transform: translate(30%, 0);
 
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
 
   #menu li {
-    padding: 10px 0;
-    font-size: 22px;
+    margin: 1rem 0;
+    // font-size: 22px;
   }
 
   /*
  * And let's slide it in from the left
  */
   #menuToggle input:checked ~ ul {
-    transform: translate(-50%, 0);
+    transform: translate(-80%, 0);
   }
+
+@media(min-width: 768px) {
+    #menuToggle {
+        display: none;
+    }
+
+    .desktop-navlinks {
+        display: block;
+        ul {
+            list-style: none;
+            a {
+                display: inline-block;
+                margin: 0.563rem 1.34rem;
+                text-decoration: none;
+                color: $grayish-dark-blue;
+                transition: 0.3s ease-in-out;
+                &:hover {
+                    color: $slightly-desaturated-cyan;
+                }
+            }
+        }
+    }
+}
