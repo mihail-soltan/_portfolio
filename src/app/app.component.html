@@ -1,6 +1,8 @@
-<div class="app-container" [ngClass]="{overflow : !isHamburgerOpen  }">
+<div class="app-container" [ngClass]="{ overflow: !isHamburgerOpen }">
   <app-navbar></app-navbar>
-  <main></main>
+  <main>
+    <app-home></app-home>
+  </main>
   <app-footer></app-footer>
 </div>
 <!-- EXAMPLE PRIMARY BUTTON

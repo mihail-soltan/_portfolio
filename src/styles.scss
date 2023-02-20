@@ -6,6 +6,7 @@ body {
 }
 nav {
   padding: 2rem;
+  // padding: 2rem 10.313rem;
 }
 
 footer {
@@ -131,4 +132,13 @@ input[type="text"] {
   all: unset;
   background-color: $light-grey;
   padding: 0.563rem 1rem;
+}
+
+@media (min-width: 768px) {
+nav {
+  padding: 2rem 10.313rem;
+  ul {
+    padding: 0;
+  }
+}
 }
