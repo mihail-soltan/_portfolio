@@ -1,17 +1,17 @@
 <footer>
-    <div class="logo-container">
-        <img src="../../../assets/white_triangles.svg" alt="white-triangles" />
-    </div>
+  <div class="logo-container">
+    <img src="../../../assets/white_triangles.svg" alt="white-triangles" />
+  </div>
   <div class="navlinks">
     <ul>
-      <a *ngFor="let item of navItems" href="#"
-        ><li>{{ item }}</li></a
-      >
+      <li *ngFor="let item of navItems">
+        <a href="#">{{ item }}</a>
+      </li>
     </ul>
   </div>
   <div class="social">
-      <img src="../../../assets/github.svg" alt="github" />
-      <img src="../../../assets/twitter.svg" alt="twitter" />
-      <img src="../../../assets/linkedin.svg" alt="linkedin" />
+    <img src="../../../assets/github.svg" alt="github" />
+    <img src="../../../assets/twitter.svg" alt="twitter" />
+    <img src="../../../assets/linkedin.svg" alt="linkedin" />
   </div>
 </footer>

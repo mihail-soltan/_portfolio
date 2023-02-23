@@ -1,44 +1,46 @@
-@import '../../../sass/variables';
+@import "../../../sass/variables";
 
-.home-container {
-  width: 100%;
+@media (min-width: 768px) {
+  .home-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  // background-image: url("../../../assets/planets_fact_site.png");
-  // background-repeat: no-repeat;
-  // background-size: 75%;
-  // background-position: center top;
+  .header {
+    display: flex;
+    background-image: url("../../../assets/planets_fact_site.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 70vh;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin: 0 2.1rem;
+    // width: 70%;
+    // justify-content: flex-end;
+    // align-items: flex-start;
+    // width: 100%;
+    &-intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 45%;
+      background-color: $white;
+      // height: 45%;
+    }
+  }
 }
 
-// .header-bg {
-//     width: 77vw;
-// }
-
-.header {
-  width: 75%;
-//   height: 37.5rem;
-//   margin-top: 10rem;
-//   background-image: url("../../../assets/planets_fact_site.png");
-//   background-repeat: no-repeat;
-//   background-size: 100%;
-//   background-position: center top;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  
-  &-bg {
-    width: 75vw;
-    // z-index: -1;
-    // position: absolute;
+@media (min-width: 1024px) {
+  .header {
+    margin: 0 10.313rem;
   }
-  &-intro {
-    border: 1px solid red;
-    width: 50%;
-    background-color: $white;
-    position: absolute;
+}
+
+@media(max-width: 767px) {
+  .header {
+    background-image: none;
   }
 }
