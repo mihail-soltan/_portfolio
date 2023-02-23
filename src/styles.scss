@@ -134,11 +134,12 @@ input[type="text"] {
   padding: 0.563rem 1rem;
 }
 
-@media (min-width: 768px) {
-nav {
-  padding: 2rem 10.313rem;
-  ul {
-    padding: 0;
+@media (min-width: 1024px) {
+  nav,
+  footer {
+    padding: 2rem 10.313rem;
+    ul {
+      padding: 0;
+    }
   }
-}
 }
