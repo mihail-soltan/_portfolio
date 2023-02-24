@@ -34,7 +34,7 @@ footer {
   .btn-text {
     width: 100%;
   }
-  &:hover {
+  &:hover, &:active {
     background-color: $slightly-desaturated-cyan;
     span {
       background-color: $slightly-desaturated-cyan-dark;
