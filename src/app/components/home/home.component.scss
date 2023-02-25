@@ -1,7 +1,6 @@
 @import "../../../sass/variables";
 
-#about,
-#contact {
+#about {
   display: flex;
 }
 hr {
@@ -10,7 +9,6 @@ hr {
 .about-text-container {
   border-top: 1px solid $light-grey;
   border-bottom: 1px solid $light-grey;
-  // padding: 1rem 0;
   .secondary-btn {
     margin-bottom: 1rem;
   }
@@ -36,17 +34,12 @@ hr {
     justify-content: flex-end;
     flex-direction: column;
     margin: 0 2.1rem;
-    // width: 70%;
-    // justify-content: flex-end;
-    // align-items: flex-start;
-    // width: 100%;
     &-intro {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       width: 45%;
       background-color: $white;
-      // height: 45%;
     }
   }
 
@@ -58,28 +51,12 @@ hr {
       align-self: center;
       img {
         width: 20rem;
-        // margin-top: 4rem;
-        // width: 100%;
       }
     }
     .about-text-container {
       h2 {
         margin: 0;
       }
-    }
-  }
-  #contact {
-    div:first-child {
-      width: 50%;
-    }
-    align-items: center;
-    justify-content: space-between;
-    & > * {
-      margin: 1rem 2.1rem;
-    }
-    .btn-container {
-      text-align: end;
-      width: 13.5rem;
     }
   }
 }
@@ -124,20 +101,6 @@ hr {
       margin: 1rem;
     }
   }
-
-  #contact {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    h2 {
-      text-align: center;
-    }
-    & > * {
-      margin: 1rem;
-    }
-  }
 }
 
 @media (min-width: 1024px) {
@@ -147,38 +110,18 @@ hr {
   #about {
     width: 100%;
     margin: 9rem 0;
-    // padding: 6rem 0;
-    // justify-content: space-between;
 
-    // flex-wrap: wrap;
     .profile-img-container {
       margin: 0 3.875rem 0 0;
       img {
-        // width: 30rem;
         margin-left: 10.313rem;
       }
     }
     .about-text-container {
       margin: 0 10.313rem 0 0;
-      // width: 21rem;
       h2 {
         margin: 2rem 0;
       }
-    }
-  }
-
-  #contact {
-
-    width: 100%;
-    div:first-child {
-      margin-left: 10.313rem;
-      width: 25%;
-    }
-    div:last-child {
-      margin-right: 10.313rem;
-    }
-    hr {
-      color: $light-grey;
     }
   }
 }

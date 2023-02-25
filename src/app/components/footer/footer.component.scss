@@ -40,7 +40,17 @@ footer {
     margin-left: 1rem;
   }
 }
+#contact {
+  display: flex;
+}
+hr {
+  border: 1px solid $light-grey;
+  width: 25%;
+}
 @media (max-width: 768px) {
+  hr {
+    display: none;
+  }
   .navlinks ul {
     text-align: center;
     padding: 0;
@@ -58,6 +68,19 @@ footer {
       margin: 0.5rem;
     }
   }
+  #contact {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      text-align: center;
+    }
+    & > * {
+      margin: 1rem;
+    }
+  }
 }
 @media (min-width: 768px) {
   footer {
@@ -73,6 +96,38 @@ footer {
         margin: 0 1.313rem;
         transition: 0.3s ease-in-out;
       }
+    }
+  }
+
+  #contact {
+    div:first-child {
+      width: 50%;
+    }
+    align-items: center;
+    justify-content: space-between;
+    & > * {
+      margin: 1rem 2.1rem;
+    }
+    .btn-container {
+      text-align: end;
+      width: 13.5rem;
+    }
+  }
+}
+
+@media(min-width: 1024px){
+  #contact {
+
+    width: 100%;
+    div:first-child {
+      margin-left: 10.313rem;
+      width: 25%;
+    }
+    div:last-child {
+      margin-right: 10.313rem;
+    }
+    hr {
+      color: $light-grey;
     }
   }
 }
