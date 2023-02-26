@@ -5,13 +5,13 @@
     </div>
     <div class="header-intro">
       <h1>Hey, I'm Mihail Soltan and I love building beautiful websites</h1>
-      <div class="primary-btn" role="button" disabled>
+      <div class="primary-btn" role="button" (click)="goToAboutMe()" disabled>
         <span><img src="../assets/btn-arrow.png" alt="icon" /></span>
         <div class="btn-text">ABOUT ME</div>
       </div>
     </div>
   </header>
-  <section id="about">
+  <section id="about" #about>
     <div class="profile-img-container">
       <img src="../../../assets/1628525428766.jpg" alt="friendly face" />
     </div>

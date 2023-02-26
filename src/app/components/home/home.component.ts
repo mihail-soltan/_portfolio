@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   constructor() {}
+  @ViewChild('about') about: ElementRef = new ElementRef(HTMLElement);
+
   aboutMe =
     'I’m a junior front-end developer looking for a new role in an exciting company.\
     I focus on writing accessible HTML, using modern CSS practices and writing clean JavaScript.\
@@ -16,4 +18,8 @@ export class HomeComponent implements OnInit {
     for a walk, run or cycling. I’d love you to check out my work.';
     
   ngOnInit(): void {}
+
+  goToAboutMe() {
+    this.about.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }
 }
