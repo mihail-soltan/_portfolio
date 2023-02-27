@@ -6,7 +6,11 @@ import { SharedService } from 'src/app/services/shared.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  navItems: string[] = ['HOME', 'PORTFOLIO', 'CONTACT ME'];
+  navItems: any[] = [
+    { name: 'HOME', link: '' },
+    { name: 'PORTFOLIO', link: 'portfolio' },
+    { name: 'CONTACT ME', link: 'contact' },
+  ];
 
   constructor(private sharedService: SharedService) {}
 

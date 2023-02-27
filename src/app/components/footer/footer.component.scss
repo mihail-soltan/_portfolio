@@ -43,6 +43,9 @@ footer {
 #contact {
   display: flex;
 }
+.isContact {
+  display: none !important;
+}
 hr {
   border: 1px solid $light-grey;
   width: 25%;
