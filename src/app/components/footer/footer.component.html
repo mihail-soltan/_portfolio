@@ -1,4 +1,4 @@
-<section id="contact">
+<section id="contact" [ngClass]="{ isContact: isContactPage }">
   <div>
     <h2>Interested in doing a project together?</h2>
   </div>
@@ -14,7 +14,7 @@
   <div class="navlinks">
     <ul>
       <li *ngFor="let item of navItems">
-        <a href="#">{{ item }}</a>
+        <a [routerLink]="['/' + item.link]">{{ item.name }}</a>
       </li>
     </ul>
   </div>

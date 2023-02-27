@@ -7,15 +7,15 @@
     <span></span>
     <span></span>
     <ul id="menu">
-      <a *ngFor="let item of navItems" href="#"
-        ><li>{{ item }}</li></a
+      <a *ngFor="let item of navItems" [routerLink]="['/' + item.link]"
+        ><li>{{ item.name }}</li></a
       >
     </ul>
   </div>
   <div class="desktop-navlinks">
     <ul>
-      <a *ngFor="let item of navItems" href="#"
-        ><li>{{ item }}</li></a
+      <a *ngFor="let item of navItems" [routerLink]="['/' + item.link]"
+        ><li>{{ item.name }}</li></a
       >
     </ul>
   </div>
