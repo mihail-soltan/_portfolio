@@ -1,0 +1,28 @@
+@import "../../../sass/variables";
+
+.get-in-touch {
+  border-top: 1px solid $light-grey;
+  border-bottom: 1px solid $light-grey;
+  margin: 2rem 2.5rem;
+  padding: 2rem 0;
+  .social {
+    img {
+      filter: invert(80%) sepia(11%) saturate(262%) hue-rotate(208deg)
+        brightness(86%) contrast(87%);
+      margin-right: 1rem;
+    }
+  }
+}
+
+.contact-form {
+  margin: 0 2.5rem;
+//   padding: 2rem 0;
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  .tertiary-btn {
+    margin: 1rem 0;
+    width: 35%;
+  }
+}

@@ -77,6 +77,25 @@ footer {
   }
 }
 
+.tertiary-btn {
+  all: unset;
+  cursor: pointer;
+  text-align: center;
+  padding: 1rem 2rem;
+  color: $white;
+  transition: 0.3s ease-in-out;
+  background-color: $dark-blue;
+  &:hover {
+    background-color: $slightly-desaturated-cyan;
+  }
+  &:disabled {
+    background-color: $light-grey;
+    color: $grayish-dark-blue;
+    &:hover {
+      background-color: $light-grey;
+    }
+  }
+}
 // HEADINGS & PARAGRAPHS
 h1,
 h2,
@@ -129,12 +148,20 @@ p.secondary {
 // TEXTAREA
 
 textarea,
-input[type="text"] {
+input[type="text"], input[type="email"] {
   all: unset;
   background-color: $light-grey;
   padding: 0.563rem 1rem;
 }
 
+label {
+  font-family: $public-sans;
+  font-weight: $bold;
+  font-size: $paragraph2;
+  line-height: $low-line;
+  letter-spacing: $narrow-spacing;
+  color: $grayish-dark-blue;
+}
 @media (min-width: 1024px) {
   nav,
   footer {
