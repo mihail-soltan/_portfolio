@@ -10,7 +10,7 @@
       <img src="../../../assets/linkedin.svg" alt="linkedin" />
     </div>
   </div>
-  <div class="contact-form">
+  <div class="contact-form" *ngIf="!sending">
     <h2>Contact Me</h2>
     <form>
       <label for="name">Name</label>
@@ -43,5 +43,11 @@
       ></textarea>
       <button class="tertiary-btn" (click)="onSubmit()">Send Message</button>
     </form>
+  </div>
+  <div class="thanks" *ngIf="sending">
+    <h2>Thanks for reaching out!</h2>
+    <p>
+      I'll get back to you as soon as I can.
+    </p>
   </div>
 </section>
