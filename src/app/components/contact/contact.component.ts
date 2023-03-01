@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-contact',
@@ -18,8 +19,9 @@ export class ContactComponent implements OnInit {
   name: string = '';
   email: string = '';
   message: string = '';
+  sending: boolean = false;
 
-  constructor() {}
+  constructor(private data: DataService) {}
 
   ngOnInit(): void {}
 
@@ -27,11 +29,24 @@ export class ContactComponent implements OnInit {
     console.log(param);
   }
   onSubmit() {
+    this.sending = true;
     const emailObj = {
-      name: this.name,
-      email: this.email,
-      message: this.message,
+      name: this.name.trim(),
+      email: this.email.trim(),
+      message: this.message.trim(),
     };
-    console.log(emailObj);
+    this.data
+      .sendEmail(emailObj)
+      .then((res) => {
+        this.sending = false;
+        console.log(res);
+      })
+      .catch((err) => {
+        this.sending = false;
+        console.log(err);
+      });
+    this.name = '';
+    this.email = '';
+    this.message = '';
   }
 }
