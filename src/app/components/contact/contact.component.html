@@ -1,13 +1,15 @@
 <section>
   <div class="get-in-touch">
     <h2>Get in Touch</h2>
-    <p>
-      {{ getInTouch }}
-    </p>
-    <div class="social">
-      <img src="../../../assets/github.svg" alt="github" />
-      <img src="../../../assets/twitter.svg" alt="twitter" />
-      <img src="../../../assets/linkedin.svg" alt="linkedin" />
+    <div>
+      <p>
+        {{ getInTouch }}
+      </p>
+      <div class="social">
+        <img src="../../../assets/github.svg" alt="github" />
+        <img src="../../../assets/twitter.svg" alt="twitter" />
+        <img src="../../../assets/linkedin.svg" alt="linkedin" />
+      </div>
     </div>
   </div>
   <div class="contact-form" *ngIf="!sending">
@@ -46,8 +48,6 @@
   </div>
   <div class="thanks" *ngIf="sending">
     <h2>Thanks for reaching out!</h2>
-    <p>
-      I'll get back to you as soon as I can.
-    </p>
+    <p>I'll get back to you as soon as I can.</p>
   </div>
 </section>

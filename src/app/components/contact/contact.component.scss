@@ -16,7 +16,8 @@
 
 .contact-form {
   margin: 0 2.5rem;
-//   padding: 2rem 0;
+  //   padding: 2rem 0;
+  min-height: 50vh;
   form {
     display: flex;
     flex-direction: column;
@@ -24,5 +25,31 @@
   .tertiary-btn {
     margin: 1rem 0;
     width: 35%;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-form {
+    margin-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .get-in-touch {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 10.313rem;
+    div {
+      width: 45%;
+    }
+  }
+
+  .contact-form {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 10.313rem;
+    form {
+      width: 45%;
+    }
   }
 }
