@@ -14,10 +14,10 @@
   }
 }
 
-.contact-form {
+.contact-form, .thanks {
   margin: 0 2.5rem;
   //   padding: 2rem 0;
-  min-height: 50vh;
+  min-height: 75vh;
   form {
     display: flex;
     flex-direction: column;
@@ -27,7 +27,15 @@
     width: 35%;
   }
 }
-
+.thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  & > * {
+    text-align: center;
+  }
+}
 @media (min-width: 768px) {
   .contact-form {
     margin-bottom: 6rem;
@@ -51,5 +59,9 @@
     form {
       width: 45%;
     }
+  }
+
+  .thanks {
+    margin: 2rem 10.313rem;
   }
 }

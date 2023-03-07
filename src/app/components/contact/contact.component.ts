@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -16,25 +17,34 @@ export class ContactComponent implements OnInit {
     a sense of purpose and attention to detail. Please do feel free to check out my \
     online profiles below and get in touch using the form.';
 
-  name: string = '';
-  email: string = '';
-  message: string = '';
+    contactFormGroup: any;
+  
+  // email: string = '';
+  // message: string = '';
   sending: boolean = false;
-
   constructor(private data: DataService) {}
+  
+  ngOnInit(): void {
+    this.contactFormGroup = new FormGroup({
+      name: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(20),
+      ]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      message: new FormControl('', [Validators.required]),
+    });
+  }
+  get name() { return this.contactFormGroup.get('name'); }
+  get email() { return this.contactFormGroup.get('email'); }
+  get message() { return this.contactFormGroup.get('message'); }
 
-  ngOnInit(): void {}
-
-  check(param: any) {
-    console.log(param);
+  check() {
+    console.log(this.contactFormGroup.status);
   }
   onSubmit() {
     this.sending = true;
-    const emailObj = {
-      name: this.name.trim(),
-      email: this.email.trim(),
-      message: this.message.trim(),
-    };
+    const emailObj = this.contactFormGroup.value;
     this.data
       .sendEmail(emailObj)
       .then((res) => {
@@ -45,8 +55,9 @@ export class ContactComponent implements OnInit {
         this.sending = false;
         console.log(err);
       });
-    this.name = '';
-    this.email = '';
-    this.message = '';
+    // this.name.reset();
+    this.contactFormGroup.reset();
+    // this.email = '';
+    // this.message = '';
   }
 }
