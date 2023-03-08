@@ -34,6 +34,7 @@ hr {
     justify-content: flex-end;
     flex-direction: column;
     margin: 0 2.1rem;
+    // animation: breathing 7s infinite ease-in-out;
     &-intro {
       display: flex;
       flex-direction: column;
@@ -64,6 +65,17 @@ hr {
 .about-text-container {
   display: flex;
   flex-direction: column;
+}
+@keyframes breathing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 767px) {

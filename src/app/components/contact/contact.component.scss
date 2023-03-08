@@ -6,10 +6,12 @@
   margin: 2rem 2.5rem;
   padding: 2rem 0;
   .social {
+    a {
+      margin-right: 1rem;
+    }
     img {
       filter: invert(80%) sepia(11%) saturate(262%) hue-rotate(208deg)
         brightness(86%) contrast(87%);
-      margin-right: 1rem;
     }
   }
 }
@@ -36,6 +38,14 @@
     text-align: center;
   }
 }
+
+.alert {
+  margin: 0.2rem 0;
+}
+
+.alert-danger {
+  color: #ff0000;
+}
 @media (min-width: 768px) {
   .contact-form {
     margin-bottom: 6rem;
@@ -50,6 +60,9 @@
     div {
       width: 45%;
     }
+    h2, p {
+      margin-top: 0;
+    }
   }
 
   .contact-form {
@@ -58,6 +71,9 @@
     margin: 2rem 10.313rem;
     form {
       width: 45%;
+    }
+    h2 {
+      margin-top: 0;
     }
   }
 
