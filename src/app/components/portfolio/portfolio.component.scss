@@ -1,0 +1,88 @@
+@import "../../../sass/variables";
+
+.main-container {
+  margin: 2rem;
+  box-sizing: border-box;
+}
+.project-overview {
+  // margin: 1rem 0;
+  img {
+    margin: 1rem 0;
+  }
+}
+.project-overview,
+details {
+  display: flex;
+  flex-direction: column;
+  height: 100%
+}
+.details {
+  border-top: 1px solid $light-grey;
+  border-bottom: 1px solid $light-grey;
+  padding-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .project-overview {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    img {
+      width: 50%;
+      height: 50%;
+      margin-right: 2rem;
+    }
+    &.reverse {
+      flex-direction: row-reverse;
+      img {
+        margin-right: 0;
+        margin-left: 2rem;
+      }
+      .details {
+        margin-left: 0;
+        margin-right: 2rem;
+      }
+    }
+  }
+  .details {
+    margin-left: 2rem;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+    .main-container {
+        margin: 5rem 10.313rem;
+    }
+  .project-overview {
+    // margin-left: 10.313rem;
+    margin-right: 3rem;
+    margin-left: 0;
+    margin-bottom: 3rem;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    img {
+      width: 30%;
+      height: 30%;
+      margin: 0;
+      object-fit: cover;
+    }
+    &.reverse {
+      margin-left: 3rem;
+      margin-right: 0;
+    //   margin-right: 10.313rem;
+    }
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    padding: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+    p {
+        width: 75%;
+    }
+}
+}
