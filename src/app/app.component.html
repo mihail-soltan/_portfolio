@@ -1,8 +1,8 @@
 <div class="app-container" [ngClass]="{ overflow: !isHamburgerOpen }">
   <app-navbar></app-navbar>
-  <main>
+  <main [@routeAnimations]="prepareRoute(outlet)">
     <!-- <app-home></app-home> -->
-    <router-outlet></router-outlet>
+    <router-outlet #outlet="outlet"></router-outlet>
   </main>
   <app-footer></app-footer>
 </div>
