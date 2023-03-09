@@ -22,7 +22,8 @@ nav {
   user-select: none;
 }
 
-#menuToggle a {
+#menuToggle li {
+  cursor: pointer;
   text-decoration: none;
   color: $white;
   font-family: $public-sans;
@@ -31,6 +32,10 @@ nav {
   transition: color 0.3s ease;
   font-size: $paragraph1;
   font-weight: $regular;
+
+  &:hover {
+    color: $slightly-desaturated-cyan;
+  }
 }
 
 

@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 import { SharedService } from './services/shared.service';
+import { fader, slideInAnimation } from './animations';
+import { RouterOutlet } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: [slideInAnimation],
 })
 export class AppComponent {
   title = 'portfolio2';
@@ -13,5 +17,9 @@ export class AppComponent {
     this.sharedService.isHamburgerOpen.subscribe((data) => {
       this.isHamburgerOpen = this.sharedService.isHamburgerOpen.value;
     });
+  }
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 }

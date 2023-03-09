@@ -1,12 +1,14 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { slideInAnimation } from 'src/app/animations';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  animations: [slideInAnimation],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
   @ViewChild('about') about: ElementRef = new ElementRef(HTMLElement);
 
   aboutMe =
@@ -21,5 +23,9 @@ export class HomeComponent implements OnInit {
 
   goToAboutMe() {
     this.about.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  goToPortfolio() {
+    this.router.navigate(['/portfolio']);
   }
 }
