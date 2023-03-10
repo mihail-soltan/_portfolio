@@ -9,7 +9,7 @@
     <div class="details" >
       <h2>{{ project.title }}</h2>
       <p>{{ project.overview }}</p>
-      <button class="secondary-btn">VIEW PROJECT</button>
+      <button class="secondary-btn" (click)="onProjectClick(project._id)">VIEW PROJECT</button>
     </div>
   </div>
 </div>

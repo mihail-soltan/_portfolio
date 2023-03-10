@@ -15,6 +15,10 @@ export class DataService {
     return this.http.get(this.apiUrl);
   }
 
+  getProjectById(id: string) {
+    return this.http.get(`${this.apiUrl}/${id}`);
+  }
+
   sendEmail(data: any): Promise<any> {
     const url = `${this.apiUrl}/send-email`;
     return from(

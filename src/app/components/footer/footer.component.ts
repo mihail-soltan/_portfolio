@@ -28,7 +28,9 @@ export class FooterComponent implements OnInit {
   }
 
   onContactClick() {
-    window.scrollTo(0, 0);
-    this.router.navigate(['/contact']);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(()=>{
+      this.router.navigate(['/contact']);
+    }, 200)
   }
 }
