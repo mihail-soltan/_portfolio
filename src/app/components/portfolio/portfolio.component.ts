@@ -9,7 +9,7 @@ import { slideInAnimation } from 'src/app/animations';
 })
 export class PortfolioComponent implements OnInit {
   projects: any[] = [];
-
+  loading: boolean = true;
   constructor(private data: DataService) {}
 
   ngOnInit(): void {
@@ -19,6 +19,7 @@ export class PortfolioComponent implements OnInit {
   getProjects() {
     this.data.getProjects().subscribe((data: any) => {
       this.projects = data;
+      this.loading = false;
       console.log(data)
     });
   }
