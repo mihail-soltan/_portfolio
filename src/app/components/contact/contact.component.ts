@@ -18,14 +18,15 @@ export class ContactComponent implements OnInit {
     a sense of purpose and attention to detail. Please do feel free to check out my \
     online profiles below and get in touch using the form.';
 
-    contactFormGroup: any;
-  
+  contactFormGroup: any;
+
   // email: string = '';
   // message: string = '';
   sending: boolean = false;
   constructor(private data: DataService) {}
-  
+
   ngOnInit(): void {
+    // this.scrollToBottom();
     this.contactFormGroup = new FormGroup({
       name: new FormControl('', [
         Validators.required,
@@ -36,12 +37,24 @@ export class ContactComponent implements OnInit {
       message: new FormControl('', [Validators.required]),
     });
   }
-  get name() { return this.contactFormGroup.get('name'); }
-  get email() { return this.contactFormGroup.get('email'); }
-  get message() { return this.contactFormGroup.get('message'); }
+  get name() {
+    return this.contactFormGroup.get('name');
+  }
+  get email() {
+    return this.contactFormGroup.get('email');
+  }
+  get message() {
+    return this.contactFormGroup.get('message');
+  }
 
   check() {
     console.log(this.contactFormGroup.status);
+  }
+  scrollToBottom() {
+    const height = document.body.scrollHeight;
+    setTimeout(() => {
+      window.scrollTo({ top: height, left: 0, behavior: 'smooth' });
+    }, 500);
   }
   onSubmit() {
     this.sending = true;
