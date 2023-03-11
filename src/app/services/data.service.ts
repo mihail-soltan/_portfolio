@@ -2,12 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Project } from '../interfaces/project';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
   apiUrl = 'https://portfolio-backend-production-8506.up.railway.app';
+
+  projects: Project[] = [];
+  currentIndex: number = 0;
 
   constructor(private http: HttpClient) {}
 

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
-import { slideInAnimation } from 'src/app/animations';
+import { routeAnimation } from 'src/app/animations';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
-  animations: [slideInAnimation],
+  animations: [routeAnimation],
 })
 export class ContactComponent implements OnInit {
   getInTouch: string =
@@ -19,10 +19,8 @@ export class ContactComponent implements OnInit {
     online profiles below and get in touch using the form.';
 
   contactFormGroup: any;
-
-  // email: string = '';
-  // message: string = '';
   sending: boolean = false;
+
   constructor(private data: DataService) {}
 
   ngOnInit(): void {
@@ -69,9 +67,6 @@ export class ContactComponent implements OnInit {
         this.sending = false;
         console.log(err);
       });
-    // this.name.reset();
     this.contactFormGroup.reset();
-    // this.email = '';
-    // this.message = '';
   }
 }

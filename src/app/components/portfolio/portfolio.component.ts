@@ -25,8 +25,8 @@ export class PortfolioComponent implements OnInit {
     });
   }
 
-  onProjectClick(id: string) {
-    console.log(id);
+  onProjectClick(id: string, index: number) {
     this.router.navigate(['/portfolio', id]);
+    this.data.currentIndex = index;
   }
 }
