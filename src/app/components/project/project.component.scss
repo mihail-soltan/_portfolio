@@ -1,0 +1,15 @@
+.project-container {
+    margin: 2rem;
+    box-sizing: border-box;
+}
+
+.main-img, .static-previews > * {
+    width: 100%;
+}
+
+.project-nav {
+    display: flex;
+    button {
+        width: 50%;
+    }
+}
