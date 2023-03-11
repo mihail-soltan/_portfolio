@@ -11,21 +11,22 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    data: { animation: 'slideInAnimation' },
+    // data: { animation: 'slideInAnimation' },
   },
   {
     path: 'contact',
     component: ContactComponent,
-    data: { animation: 'fader' }
+    data: { animation: 'routeAnimation' }
   },
   {
     path: 'portfolio',
     component: PortfolioComponent,
+    data: { animation: 'slideInAnimation' }
   },
   {
     path: 'portfolio/:id',
     component: ProjectComponent,
-    data: { animation: 'slideInAnimation' }
+    data: { animation: 'fader' }
   }
 ];
 

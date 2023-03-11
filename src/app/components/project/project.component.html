@@ -1,1 +1,41 @@
-<p>project works!</p>
+<div>
+  <div *ngIf="loading" class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+  <div class="project-container" *ngIf="!loading" >
+    <img src="{{ project.pictures[0] }}" alt="main-pic" class="main-img" />
+    <div class="project-overview">
+      <h2>{{ project.title }}</h2>
+      <p class="main">{{ project.overview }}</p>
+      <p class="secondary" *ngFor="let tag of project.tags">{{ tag }}</p>
+      <p class="secondary" *ngFor="let lang of project.stack">{{ lang }}</p>
+      <button class="secondary-btn">VIEW PROJECT</button>
+    </div>
+    <div class="proj-background">
+      <h2>Project Background</h2>
+      <p>{{ project.background }}</p>
+    </div>
+    <div class="static-previews">
+      <img src="{{ project.pictures[1] }}" alt="static-pic" />
+      <img src="{{ project.pictures[2] }}" alt="static-pic" />
+    </div>
+  </div>
+  <div class="project-nav">
+    <button
+      class="secondary-btn"
+      [disabled]="!objectExists(previousProject)"
+      (click)="goToPreviousProject()"
+    >
+      {{ previousProject?.title || "" }}
+    </button>
+    <button
+      class="secondary-btn"
+      [disabled]="!objectExists(nextProject)"
+      (click)="goToNextProject()"
+    >
+      {{ nextProject?.title || "" }}
+    </button>
+  </div>
+</div>
