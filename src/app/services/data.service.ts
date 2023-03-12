@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Project } from '../interfaces/project';
-
+import { environment } from 'src/environments/environment.prod';
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  apiUrl = 'https://portfolio-backend-production-8506.up.railway.app';
+  apiUrl = environment.API_URL;
 
   projects: Project[] = [];
   currentIndex: number = 0;
