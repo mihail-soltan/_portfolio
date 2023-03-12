@@ -13,11 +13,16 @@ export class FooterComponent implements OnInit {
     { name: 'CONTACT ME', link: 'contact' },
   ];
   isContactPage: boolean = false;
+  componentLoaded: boolean = false;
   constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        this.componentLoaded = false;
+        setTimeout(() => {
+          this.componentLoaded = true;
+        }, 1000);
         if (event.url === '/contact') {
           this.isContactPage = true;
         } else {
