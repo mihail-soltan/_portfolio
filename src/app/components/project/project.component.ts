@@ -24,39 +24,44 @@ export class ProjectComponent implements OnInit {
   previousProject!: Project;
   nextProject!: Project;
   ngOnInit(): void {
-    if(this.data.projects.length){
+    if (this.data.projects.length) {
       this.projects = this.data.projects;
+      this.route.paramMap.subscribe((params) => {
+        this.getProject();
+      });
     } else {
       this.data.getProjects().subscribe((data: any) => {
         this.projects = data;
+        this.route.paramMap.subscribe((params) => {
+          this.getProject();
+        });
       });
     }
-    this.route.paramMap.subscribe((params) => {
-      this.getProject()
-    });
-
   }
 
   getProject() {
     const projectId = this.route.snapshot.params['id'];
     this.data.getProjectById(projectId).subscribe((data: any) => {
       this.project = data;
-      this.currentIndex = this.projects.findIndex((project) => project._id === this.project._id);
+      console.log(this.projects);
+      this.currentIndex = this.projects.findIndex(
+        (project) => project._id === this.project._id
+      );
       this.previousProject = this.projects[this.currentIndex - 1];
       this.nextProject = this.projects[this.currentIndex + 1];
       this.loading = false;
-      console.log(this.currentIndex)
+      console.log(this.currentIndex);
     });
   }
 
   goToPreviousProject() {
-    window.scrollTo({top: 0, behavior: 'smooth'})
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.router.navigate(['/portfolio', this.previousProject._id]);
     this.data.currentIndex = this.currentIndex - 1;
   }
 
   goToNextProject() {
-    window.scrollTo({top: 0, behavior: 'smooth'})
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.router.navigate(['/portfolio', this.nextProject._id]);
     this.data.currentIndex = this.currentIndex + 1;
   }
