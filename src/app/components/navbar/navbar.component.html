@@ -1,7 +1,8 @@
 <nav>
   <img src="../../../assets/triangles.svg" alt="triangles" />
+  <div id="dialog-overlay" *ngIf="isHamburgerOpen" (click)="closeMenu()"></div>
   <div id="menuToggle">
-    <input type="checkbox" (change)="toggleMenu()"  [(ngModel)]="isHamburgerOpen"/>
+    <input type="checkbox"  [(ngModel)]="isHamburgerOpen"/>
 
     <span></span>
     <span></span>

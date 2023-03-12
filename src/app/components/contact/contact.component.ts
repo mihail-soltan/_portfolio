@@ -45,9 +45,6 @@ export class ContactComponent implements OnInit {
     return this.contactFormGroup.get('message');
   }
 
-  check() {
-    console.log(this.contactFormGroup.status);
-  }
   scrollToBottom() {
     const height = document.body.scrollHeight;
     setTimeout(() => {

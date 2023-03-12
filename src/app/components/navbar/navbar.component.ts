@@ -18,11 +18,9 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  toggleMenu() {
-    // this.sharedService.toggleMenu();
-    console.log(this.isHamburgerOpen)
+  closeMenu() {
+    this.isHamburgerOpen = false;
   }
-
   onNavItemClick(link: string) {
     this.isHamburgerOpen = false;
     this.sharedService.isHamburgerOpen.next(false);
