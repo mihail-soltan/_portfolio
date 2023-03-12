@@ -57,7 +57,7 @@ details {
     }
   .project-overview {
     // margin-left: 10.313rem;
-    margin-right: 3rem;
+    margin-right: 0;
     margin-left: 0;
     margin-bottom: 3rem;
     align-items: center;
@@ -70,7 +70,7 @@ details {
       object-fit: cover;
     }
     &.reverse {
-      margin-left: 3rem;
+      margin-left: 0;
       margin-right: 0;
     //   margin-right: 10.313rem;
     }

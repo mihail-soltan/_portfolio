@@ -81,9 +81,16 @@ hr {
 @media (max-width: 767px) {
   .header {
     background-image: none;
+    &-intro h1 {
+      font-size: 2.7rem;
+    }
   }
 }
-
+@media (min-width: 768px) and (max-width: 1024px) { 
+  .header-intro {
+    width: 55%;
+  }
+}
 @media (max-width: 768px) {
   hr {
     display: none;
@@ -118,6 +125,9 @@ hr {
 @media (min-width: 1024px) {
   .header {
     margin: 0 10.313rem;
+    &-intro {
+      width: 40%;
+    }
   }
   #about {
     width: 100%;
