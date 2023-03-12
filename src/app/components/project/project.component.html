@@ -5,8 +5,16 @@
     <div class="bounce3"></div>
   </div>
   <div class="project-container" *ngIf="!loading">
-    <img src="{{ project.pictures[0] }}" alt="main-pic" class="main-img-mobile" />
-    <img src="{{ project.pictures[1] }}" alt="main-pic" class="main-img-desktop" />
+    <img
+      src="{{ project.pictures[0] }}"
+      alt="main-pic"
+      class="main-img-mobile"
+    />
+    <img
+      src="{{ project.pictures[1] }}"
+      alt="main-pic"
+      class="main-img-desktop"
+    />
     <div class="inner">
       <div class="project-overview">
         <div>
@@ -24,12 +32,12 @@
               {{ project.stack.join("/") }}
             </p>
           </div>
-          <button class="secondary-btn">
-            <a href="{{ project.source }}" target="_blank"> VIEW PROJECT </a>
-          </button>
+          <a class="view-project" href="{{ project.source }}" target="_blank">
+            <button class="secondary-btn">VIEW PROJECT</button>
+          </a>
         </div>
         <div>
-          <p class="tablet">{{project.overview}}</p>
+          <p class="tablet">{{ project.overview }}</p>
         </div>
       </div>
       <div>
@@ -39,11 +47,18 @@
         </div>
         <h3 class="previews-header">Static Previews</h3>
         <div class="static-previews">
-          <img src="{{ project.pictures[1] }}" alt="static-pic" class="static-mobile" />
-          <img src="{{ project.pictures[0] }}" alt="static-pic" class="static-desktop" />
+          <img
+            src="{{ project.pictures[1] }}"
+            alt="static-pic"
+            class="static-mobile"
+          />
+          <img
+            src="{{ project.pictures[0] }}"
+            alt="static-pic"
+            class="static-desktop"
+          />
           <img src="{{ project.pictures[2] }}" alt="static-pic" />
         </div>
-  
       </div>
     </div>
   </div>

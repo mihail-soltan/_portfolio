@@ -15,11 +15,11 @@
       color: $slightly-desaturated-cyan;
       margin: 0;
     }
+    .view-project {
+      all: unset;
+    }
     .secondary-btn {
       margin-top: 2rem;
-      a {
-        all: unset;
-      }
     }
     .tablet {
       display: none;
