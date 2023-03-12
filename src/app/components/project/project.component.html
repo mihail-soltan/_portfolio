@@ -4,22 +4,62 @@
     <div class="bounce2"></div>
     <div class="bounce3"></div>
   </div>
-  <div class="project-container" *ngIf="!loading" >
-    <img src="{{ project.pictures[0] }}" alt="main-pic" class="main-img" />
-    <div class="project-overview">
-      <h2>{{ project.title }}</h2>
-      <p class="main">{{ project.overview }}</p>
-      <p class="secondary" *ngFor="let tag of project.tags">{{ tag }}</p>
-      <p class="secondary" *ngFor="let lang of project.stack">{{ lang }}</p>
-      <button class="secondary-btn">VIEW PROJECT</button>
-    </div>
-    <div class="proj-background">
-      <h2>Project Background</h2>
-      <p>{{ project.background }}</p>
-    </div>
-    <div class="static-previews">
-      <img src="{{ project.pictures[1] }}" alt="static-pic" />
-      <img src="{{ project.pictures[2] }}" alt="static-pic" />
+  <div class="project-container" *ngIf="!loading">
+    <img
+      src="{{ project.pictures[0] }}"
+      alt="main-pic"
+      class="main-img-mobile"
+    />
+    <img
+      src="{{ project.pictures[1] }}"
+      alt="main-pic"
+      class="main-img-desktop"
+    />
+    <div class="inner">
+      <div class="project-overview">
+        <div>
+          <h1>{{ project.title }}</h1>
+          <p class="main">{{ project.overview }}</p>
+          <p class="secondary">
+            {{ project.tags.join("/") }}
+          </p>
+          <div>
+            <!-- <p class="secondary" *ngFor="let lang of project.stack; let i = index">
+              {{ i === project.stack.length - 1 ? lang : lang + "/ " }}
+            </p> -->
+            <!-- The following solution is a better way to do the thing commented out above -->
+            <p class="secondary">
+              {{ project.stack.join("/") }}
+            </p>
+          </div>
+          <a class="view-project" href="{{ project.source }}" target="_blank">
+            <button class="secondary-btn">VIEW PROJECT</button>
+          </a>
+        </div>
+        <div>
+          <p class="tablet">{{ project.overview }}</p>
+        </div>
+      </div>
+      <div>
+        <div class="proj-background">
+          <h3>Project Background</h3>
+          <p>{{ project.background }}</p>
+        </div>
+        <h3 class="previews-header">Static Previews</h3>
+        <div class="static-previews">
+          <img
+            src="{{ project.pictures[1] }}"
+            alt="static-pic"
+            class="static-mobile"
+          />
+          <img
+            src="{{ project.pictures[0] }}"
+            alt="static-pic"
+            class="static-desktop"
+          />
+          <img src="{{ project.pictures[2] }}" alt="static-pic" />
+        </div>
+      </div>
     </div>
   </div>
   <div class="project-nav">
@@ -28,14 +68,18 @@
       [disabled]="!objectExists(previousProject)"
       (click)="goToPreviousProject()"
     >
-      {{ previousProject?.title || "" }}
+      <h2>&lt;</h2>
+      <h2>{{ previousProject?.title || "No previous project" }}</h2>
+      <p>Previous Project</p>
     </button>
     <button
       class="secondary-btn"
       [disabled]="!objectExists(nextProject)"
       (click)="goToNextProject()"
     >
-      {{ nextProject?.title || "" }}
+      <h2>&gt;</h2>
+      <h2>{{ nextProject?.title || "No next project" }}</h2>
+      <p>Next Project</p>
     </button>
   </div>
 </div>

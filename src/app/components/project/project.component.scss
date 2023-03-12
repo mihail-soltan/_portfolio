@@ -1,15 +1,137 @@
-.project-container {
+@import "../../../sass/variables";
+
+.project {
+  &-container {
     margin: 2rem;
     box-sizing: border-box;
+  }
+  &-overview {
+    margin: 2.5rem 0;
+    padding-bottom: 1.5rem;
+    border-top: 1px solid $light-grey;
+    border-bottom: 1px solid $light-grey;
+    .secondary {
+      display: inline-block;
+      color: $slightly-desaturated-cyan;
+      margin: 0;
+    }
+    .view-project {
+      all: unset;
+    }
+    .secondary-btn {
+      margin-top: 2rem;
+    }
+    .tablet {
+      display: none;
+    }
+  }
 }
-
-.main-img, .static-previews > * {
-    width: 100%;
+.previews-header {
+  margin: 2.5rem 0;
+}
+.static-previews {
+  img {
+    margin: 1rem 0;
+  }
+  .static-desktop {
+    display: none;
+  }
+}
+.main-img-desktop {
+  display: none;
+}
+.main-img-mobile,
+.static-previews > * {
+  width: 100%;
 }
 
 .project-nav {
+  display: flex;
+  button {
     display: flex;
-    button {
-        width: 50%;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    h2 {
+      margin: 0.5rem 0;
     }
+    &:hover {
+      h2,
+      p {
+        color: white;
+      }
+    }
+    &:disabled,
+    &:hover {
+      h2,
+      p {
+        color: $light-grey;
+      }
+    }
+  }
+  button:first-child {
+    align-items: flex-start;
+    text-align: start;
+  }
+  button:nth-child(2) {
+    text-align: end;
+    align-items: flex-end;
+  }
+}
+
+@media (min-width: 768px) {
+  .static-previews {
+    .static-desktop {
+      display: inline;
+    }
+    .static-mobile {
+      display: none;
+    }
+  }
+  .main-img-mobile {
+    display: none;
+  }
+  .main-img-desktop {
+    display: inline;
+    width: 100%;
+  }
+  .project-container {
+    margin: 2.5rem;
+  }
+  .project-overview {
+    display: flex;
+    justify-content: space-between;
+    .main {
+      display: none;
+    }
+    .tablet {
+      display: block;
+    }
+
+    div:nth-child(2) {
+      width: 50%;
+      padding: 1rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-container {
+    margin-left: 10.313rem;
+    margin-right: 10.313rem;
+  }
+  .inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  .project-overview {
+    .main {
+      display: block;
+    }
+    div:nth-child(2) {
+      display: none;
+    }
+
+    margin-right: 7.8rem;
+  }
 }

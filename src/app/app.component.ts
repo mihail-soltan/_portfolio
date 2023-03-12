@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { SharedService } from './services/shared.service';
-import { fader, slideInAnimation } from './animations';
+import { fader, slideInAnimation, routeAnimation } from './animations';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [slideInAnimation],
+  animations: [slideInAnimation, fader, routeAnimation],
 })
 export class AppComponent {
   title = 'portfolio2';

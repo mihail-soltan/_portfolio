@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    // data: { animation: 'slideInAnimation' },
+    data: { animation: 'slideInAnimation' },
   },
   {
     path: 'contact',
@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path: 'portfolio',
     component: PortfolioComponent,
-    data: { animation: 'slideInAnimation' }
+    // data: { animation: 'slideInAnimation' }
   },
   {
     path: 'portfolio/:id',
