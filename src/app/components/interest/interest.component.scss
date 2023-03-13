@@ -1,0 +1,59 @@
+@import "../../../sass/variables";
+
+#contact {
+  display: flex;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    text-align: center;
+  }
+  & > * {
+    margin: 1rem;
+  }
+
+  hr {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  #contact {
+    flex-direction: row;
+    div:first-child {
+      width: 50%;
+    }
+    align-items: center;
+    justify-content: space-between;
+    & > * {
+      margin: 1rem 2.1rem;
+    }
+    .btn-container {
+      text-align: end;
+      // width: 13.5rem;
+      .secondary-btn {
+        width: 7rem;
+      }
+    }
+    hr {
+      display: block;
+      width: 40%;
+      color: $light-grey;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  #contact {
+    width: 100%;
+    div:first-child {
+      margin-left: 10.313rem;
+      width: 25%;
+    }
+    div:last-child {
+      margin-right: 10.313rem;
+    }
+  }
+}

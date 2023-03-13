@@ -58,7 +58,6 @@ export class ContactComponent implements OnInit {
       .sendEmail(emailObj)
       .then((res) => {
         this.sending = false;
-        console.log(res);
       })
       .catch((err) => {
         this.sending = false;

@@ -21,7 +21,6 @@ export class PortfolioComponent implements OnInit {
     this.data.getProjects().subscribe((data: any) => {
       this.projects = data;
       this.loading = false;
-      console.log(data)
     });
   }
 

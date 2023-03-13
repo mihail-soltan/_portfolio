@@ -24,10 +24,6 @@
             {{ project.tags.join("/") }}
           </p>
           <div>
-            <!-- <p class="secondary" *ngFor="let lang of project.stack; let i = index">
-              {{ i === project.stack.length - 1 ? lang : lang + "/ " }}
-            </p> -->
-            <!-- The following solution is a better way to do the thing commented out above -->
             <p class="secondary">
               {{ project.stack.join("/") }}
             </p>
@@ -83,3 +79,4 @@
     </button>
   </div>
 </div>
+<app-interest></app-interest>

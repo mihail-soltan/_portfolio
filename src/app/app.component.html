@@ -1,43 +1,7 @@
 <div class="app-container" [ngClass]="{ overflow: !isHamburgerOpen }">
   <app-navbar></app-navbar>
   <main [@routeAnimations]="prepareRoute(outlet)">
-    <!-- <app-home></app-home> -->
     <router-outlet #outlet="outlet"></router-outlet>
   </main>
   <app-footer></app-footer>
 </div>
-<!-- EXAMPLE PRIMARY BUTTON
-<div class="primary-btn" role="button" disabled>
-  <span><img src="../assets/btn-arrow.png" alt="icon" /></span>
-  <div class="btn-text">ABOUT ME</div>
-</div>
-EXAMPLE SECONDARY BUTTON
-<div>
-  <button class="secondary-btn">CONTACT ME</button>
-</div>
-DISABLED
-<div>
-  <button class="secondary-btn" disabled>CONTACT ME</button>
-</div>
-
-<h1>H1 Example</h1>
-<h2>H2 Example</h2>
-<h3>H3 Example</h3>
-
-PARAGRAPH Example
-<p>
-  Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus
-  metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis,
-  gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper
-  lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque.
-</p>
-
-TEXTAREA Example
-<div>
-  <textarea name="blabla" id="blabla" cols="30" rows="10" placeholder="Enter text here"></textarea>
-</div>
-
-INPUT TYPE TEXT Example 
-<div>
-  <input type="text" name="bruh" id="bruh" placeholder="LMAO">
-</div> -->
