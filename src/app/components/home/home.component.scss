@@ -45,11 +45,12 @@ hr {
   }
 
   #about {
+    margin-top: 2rem;
     & > * {
       margin: 1rem 2.1rem;
     }
     .profile-img-container {
-      align-self: center;
+      align-self: flex-start;
       img {
         width: 20rem;
       }

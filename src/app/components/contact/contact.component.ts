@@ -10,13 +10,12 @@ import { routeAnimation } from 'src/app/animations';
 })
 export class ContactComponent implements OnInit {
   getInTouch: string =
-    'I’d love to hear about what you’re working on and how I could help. \
-    I’m currently looking for a new role and am open to a wide range of opportunities.\
-    My preference would be to find a position in a company in Bucharest.\
-    But I’m also happy to hear about opportunites that don’t fit that description.\
-    I’m a hard-working and positive person who will always approach each task with \
-    a sense of purpose and attention to detail. Please do feel free to check out my \
-    online profiles below and get in touch using the form.';
+    'I am interested in learning about your current projects and how I may be of assistance. \
+    As I am actively seeking new employment opportunities, I am open to a variety of roles.\
+    Ideally, I would like to secure a position within a company based in Bucharest, although \
+    I am willing to consider other options. My work ethic is both diligent and optimistic, and\
+    I approach every task with a strong sense of purpose and meticulous attention to detail.\
+    I invite you to peruse my online profiles listed below and contact me using the provided form.';
 
   contactFormGroup: any;
   sending: boolean = false;

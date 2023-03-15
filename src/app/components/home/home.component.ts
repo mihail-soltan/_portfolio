@@ -12,12 +12,16 @@ export class HomeComponent implements OnInit {
   @ViewChild('about') about: ElementRef = new ElementRef(HTMLElement);
 
   aboutMe =
-    'I’m a junior front-end developer looking for a new role in an exciting company.\
-    I focus on writing accessible HTML, using modern CSS practices and writing clean JavaScript.\
-    When writing JavaScript code, I mostly use Angular, but I can adapt to whatever tools are required.\
-    I’m based in Bucharest, Romania, but I’m happy working remotely and have experience in remote teams. \
-    When I’m not coding, you’ll find me outdoors. I love being out in nature whether that’s going \
-    for a walk, run or cycling. I’d love you to check out my work.';
+    `Hey there! I'm a front-end developer on the lookout for a new gig in an exciting company.\
+    I'm all about creating sleek and accessible HTML, utilizing modern CSS practices, and writing \
+    clean JavaScript. My go-to framework is Angular, but I'm always up for exploring new tools. \
+    Plus, I've got experience with Node.JS, Express, Mongoose, and MongoDB under my belt. <br><br>
+
+    I'm based in Bucharest, Romania, but I'm totally down for remote work and have experience 
+    working in remote teams. When I'm not busy coding, I enjoy playing guitar and whipping up 
+    some delicious dishes in the kitchen. Oh, and I love spending time outdoors too! Whether 
+    it's going for a hike, taking a leisurely bike ride, or just chilling in nature, I'm all about it. <br><br>
+    If you're interested in checking out my work or learning more about me, let's chat!`;
     
   ngOnInit(): void {}
 

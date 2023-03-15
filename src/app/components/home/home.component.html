@@ -17,7 +17,7 @@
     </div>
     <div class="about-text-container">
       <h2>About Me</h2>
-      <p>{{ aboutMe }}</p>
+      <p [innerHTML]="aboutMe"></p>
       <div class="btn-container">
         <button class="secondary-btn" (click)="goToPortfolio()">GO TO PORTFOLIO</button>
       </div>
