@@ -17,7 +17,7 @@
     </div>
     <div class="about-text-container">
       <h2>About Me</h2>
-      <p [innerHTML]="aboutMe"></p>
+      <p id="aboutMe" [innerHTML]="safeAboutMe"></p>
       <div class="btn-container">
         <button class="secondary-btn" (click)="goToPortfolio()">GO TO PORTFOLIO</button>
       </div>

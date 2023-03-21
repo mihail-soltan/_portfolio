@@ -1,6 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+
 import { slideInAnimation } from 'src/app/animations';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,9 +11,6 @@ import { slideInAnimation } from 'src/app/animations';
   animations: [slideInAnimation],
 })
 export class HomeComponent implements OnInit {
-  constructor(private router: Router) {}
-  @ViewChild('about') about: ElementRef = new ElementRef(HTMLElement);
-
   aboutMe =
     `Hey there! I'm a front-end developer on the lookout for a new gig in an exciting company.\
     I'm all about creating sleek and accessible HTML, utilizing modern CSS practices, and writing \
@@ -22,6 +22,13 @@ export class HomeComponent implements OnInit {
     some delicious dishes in the kitchen. Oh, and I love spending time outdoors too! Whether 
     it's going for a hike, taking a leisurely bike ride, or just chilling in nature, I'm all about it. <br><br>
     If you're interested in checking out my work or learning more about me, let's chat!`;
+  safeAboutMe?: SafeHtml;
+    @ViewChild('about') about: ElementRef = new ElementRef(HTMLElement);
+  
+    constructor(private router: Router, private sanitizer: DomSanitizer) {
+      this.safeAboutMe = sanitizer.bypassSecurityTrustHtml(this.aboutMe);
+  }
+
     
   ngOnInit(): void {}
 
