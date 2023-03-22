@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     @ViewChild('about') about: ElementRef = new ElementRef(HTMLElement);
   
     constructor(private router: Router, private sanitizer: DomSanitizer) {
-      this.safeAboutMe = sanitizer.bypassSecurityTrustHtml(this.aboutMe);
+      this.safeAboutMe = this.sanitizer.bypassSecurityTrustHtml(this.aboutMe);
   }
 
     

@@ -5,6 +5,7 @@ import { fader } from 'src/app/animations';
 import { Router } from '@angular/router';
 import { Project } from 'src/app/interfaces/project';
 import { BehaviorSubject } from 'rxjs';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
@@ -12,11 +13,6 @@ import { BehaviorSubject } from 'rxjs';
   animations: [fader],
 })
 export class ProjectComponent implements OnInit {
-  constructor(
-    private route: ActivatedRoute,
-    private data: DataService,
-    private router: Router
-  ) {}
 
   projectId = new BehaviorSubject<any>('');
   project: any = {};
@@ -25,17 +21,29 @@ export class ProjectComponent implements OnInit {
   currentIndex = 0;
   previousProject!: Project;
   nextProject!: Project;
+  safeBackground?: SafeHtml;
+
+  constructor(
+    private route: ActivatedRoute,
+    private data: DataService,
+    private router: Router,
+    private sanitizer: DomSanitizer
+  ) {
+  }
+
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
       this.projectId.next(id);
-      // if (!this.data.projects.length) {
       this.loading = true;
       this.data.getProjects().subscribe((data: any) => {
         this.projects = data;
         this.project = this.projects.find(
           (project) => project._id === this.projectId.value
+        );
+        this.safeBackground = this.sanitizer.bypassSecurityTrustHtml(
+          this.project.background
         );
         this.currentIndex = this.projects.findIndex(
           (project) => project._id === this.project._id
@@ -43,21 +51,8 @@ export class ProjectComponent implements OnInit {
         this.previousProject = this.projects[this.currentIndex - 1];
         this.nextProject = this.projects[this.currentIndex + 1];
         this.loading = false;
+        console.log(this.safeBackground);
       });
-      // }
-      // else {
-      //   this.loading = true;
-      //   this.projects = this.data.projects;
-      //   this.project = this.projects.find(
-      //     (project) => project._id === this.projectId.value
-      //   );
-      //   this.currentIndex = this.projects.findIndex(
-      //     (project) => project._id === this.project._id
-      //   );
-      //   this.previousProject = this.projects[this.currentIndex - 1];
-      //   this.nextProject = this.projects[this.currentIndex + 1];
-      //   this.loading = false;
-      // }
     });
   }
 
