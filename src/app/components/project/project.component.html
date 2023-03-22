@@ -16,6 +16,7 @@
       class="main-img-desktop"
     />
     <div class="inner">
+      <div class="overview-background">
       <div class="project-overview">
         <div>
           <h1>{{ project.title }}</h1>
@@ -36,25 +37,24 @@
           <p class="tablet">{{ project.overview }}</p>
         </div>
       </div>
-      <div>
         <div class="proj-background">
           <h3>Project Background</h3>
-          <p>{{ project.background }}</p>
-        </div>
-        <h3 class="previews-header">Static Previews</h3>
-        <div class="static-previews">
-          <img
-            src="{{ project.pictures[1] }}"
-            alt="static-pic"
-            class="static-mobile"
-          />
-          <img
-            src="{{ project.pictures[0] }}"
-            alt="static-pic"
-            class="static-desktop"
-          />
-          <img src="{{ project.pictures[2] }}" alt="static-pic" />
-        </div>
+          <p [innerHTML]="safeBackground"></p>
+      </div>
+      </div>
+      <h3 class="previews-header">Static Previews</h3>
+      <div class="static-previews">
+        <img
+          src="{{ project.pictures[1] }}"
+          alt="static-pic"
+          class="static-mobile"
+        />
+        <img
+          src="{{ project.pictures[0] }}"
+          alt="static-pic"
+          class="static-desktop"
+        />
+        <img src="{{ project.pictures[2] }}" alt="static-pic" />
       </div>
     </div>
   </div>
@@ -64,8 +64,8 @@
       [disabled]="!objectExists(previousProject)"
       (click)="goToPreviousProject()"
     >
-      <h2>&lt;</h2>
-      <h2>{{ previousProject?.title || "No previous project" }}</h2>
+      <h3>&lt;</h3>
+      <h3>{{ previousProject?.title || "No previous project" }}</h3>
       <p>Previous Project</p>
     </button>
     <button
@@ -73,8 +73,8 @@
       [disabled]="!objectExists(nextProject)"
       (click)="goToNextProject()"
     >
-      <h2>&gt;</h2>
-      <h2>{{ nextProject?.title || "No next project" }}</h2>
+      <h3>&gt;</h3>
+      <h3>{{ nextProject?.title || "No next project" }}</h3>
       <p>Next Project</p>
     </button>
   </div>
